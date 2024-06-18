@@ -7,64 +7,147 @@
     box-sizing: border-box;
     text-transform: capitalize;
 }
-section{
-    width: 100%;
-    display: flex;
-    height: 100vh;
-    flex-direction: row;
-    overflow: hidden;
+h1{
+    font-family: "Manrope", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
 }
-section div:nth-child(1){
+h2{
+    font-family: "Manrope", sans-serif;
+    font-size: 2.5rem;
+}
+p{
+    font-family: "Manrope", sans-serif;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.7);
+}
+section{
+    display: flex;
+}
+.container{
     width: 50%;
     height: 100vh;
+    overflow: clip;
 }
-img{
+.container:nth-child(2){
+    padding: 4rem 8rem;
+}
+
+.container img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
 }
-section div:nth-child(2){
-    padding: 2rem 1rem;
-    display: flex;
-    justify-content: center;
-    background-color: #cfd8d8;
-}
-textarea{
-    resize: none;
-    width: 100%;
-    height: 20vh;
-
-}
-.right{
-    width: 50%;
-}
-/* form styling */
-form{
-    width: 100%;
-    padding: 3rem 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-label{
-    padding: 12px 4px;
+#registrationForm{
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
-input{
-    width: 60%;
-    padding: 1rem .5rem;
+#registrationForm .form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+#registrationForm .names{
+    display: flex;
+    flex-direction: row;
+    width: inherit;
+    gap: 8px;
+}
+#registrationForm .names .form-group{
+    width: 100%;
+}
+#registrationForm .form-group input{
+    padding: 1rem 1.5rem;
+    outline: 1px solid rgba(128, 128, 128, 0.5);
+    border-radius: 12px;
+    border: none;
+    height: 48px;
+    transition: all ease 500ms;
+    width: 100%;
+}
+#registrationForm .form-group label{
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+#registrationForm .form-group input:focus{
+    outline: none;
+    background: rgba(128, 128, 128, 0.2);
+}
+#registrationForm .form-group textarea{
+    height: 72px;
+    resize: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    transition: all ease 500ms;
+}
+#registrationForm .form-group textarea:focus{
+    outline: none;
+    border: none;
+    background: rgba(128, 128, 128, 0.2);
+    color: black;
+}
+#registrationForm button{
+    padding: 1rem 2rem;
+    border: none;
+    width: fit-content;
+    min-width: calc(128px * 2);
+    background: #000;
+    color: white;
     border-radius: 12px;
 }
-input[placeholder]{
-    text-emphasis: none;
+#registrationForm .rate-group{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    font-size: 2rem;
+    margin-bottom: 12px;
 }
-button{
-    min-width: 96px;
-    background-color: black;
-    color: white;
-    width: fit-content;
-    padding: 12px 36px;
+#registrationForm .rate-group i{
+    color: black;
+    cursor: pointer;
+    transition: all ease 500ms;
+}
+#registrationForm .rate-group i:hover{
+    transform: scale(1.2);
+}
+#registrationForm div:nth-child(1){
+    margin-bottom: 16px;
+}
+@media screen and (max-width: 720px) {
+    .container:nth-child(1){
+        width: 100%;
+    }
+    .container:nth-child(2){
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 0;
+        min-width: 95vw;
+        border-radius: 24px;
+    }
+    #registrationForm{
+        transform: scale(0.8);
+        background: rgba(0, 80, 80, 0.4);
+        /* From https://css.glass */
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(19.1px);
+        -webkit-backdrop-filter: blur(19.1px);
+        border: 1px solid rgba(5, 70, 255, 0.95);
+        padding: 1rem 2rem;
+        color: white;
+    }
+    #registrationForm .names{
+        display: flex;
+        flex-direction: column;
+    }
+    #registrationForm .form-group input{
+        background: transparent;
+    }
+    #registrationForm .form-group input:focus{
+        outline: none;
+        background: white;
+    }
 }

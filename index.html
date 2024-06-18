@@ -8,66 +8,70 @@
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <title>E-commerce</title>
   </head>
+
   <body>
     <section>
-      <div>
-        <img
-          src="./assests/NOISY MARBLES.gif"
-          alt=""
-          srcset=""
-        />
+      <div class="container">
+        <img src="./assests/NOISY MARBLES.gif" alt="" srcset="" />
       </div>
-      <div class="right">
-        <form
-          action="/index.html"
-          class="flex gap-4 w-full flex-col"
-          method="post"
-        >
-          <label
-            for="age"
-            class="p-4 rounded-3xl flex flex-col w-full bg-gray-200 input-values"
-          >
-            Age
-            <input type="number" name="" id="age" value="" max="100" min="18" className="" />
-          </label>
-          <label
-            for="age"
-            class="p-4 rounded-3xl flex flex-col w-full bg-gray-200 input-values"
-          >
-            email
-            <input
-              type="email"
-              name=""
-              id="email"
-              value=""
-              className=""
-              placeholder="name@example.com"
-            />
-          </label>
-          <label
-            for="age"
-            class="p-4 rounded-3xl flex flex-col w-full bg-gray-200 input-values"
-          >
-            Feedback
-            <textarea name="" id=""></textarea>
-          </label>
-
-          <div class="size-fit">
-            <i class="ph-fill ph-star"></i>
-            <i class="ph ph-star"></i>
-            <i class="ph ph-star"></i>
-            <i class="ph ph-star"></i>
-            <i class="ph ph-star"></i>
-          </div>
-
-          <label for="date" class="p-4">
-            Survey Date:
-            <input type="date" name="" id="survey" value="" className="" />
-          </label>
-          <button>Submit</button>
+      <div class="container">
+        <form id="registrationForm">
+            <div>
+                <h2>User Registration</h2>
+                <p>Our friendly team would love to hear from you.</p>
+            </div>
+            <div class="names">
+                <div class="form-group">
+                    <label for="username">Firstname:</label>
+                    <input type="text" id="firstname" name="firstname" required>
+                    <small class="error" id="firstnameError"></small>
+                </div>
+                <div class="form-group">
+                    <label for="username">Lastname:</label>
+                    <input type="text" id="Lastname" name="Lastname" required>
+                    <small class="error" id="LastnameError"></small>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <small class="error" id="emailError"></small>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="18" max="100" required>
+                <small class="error" id="ageSmall"></small>
+            </div>
+            <div class="form-group">
+                <label for="password">Survey</label>
+                <textarea type="password" id="password" name="password" required></textarea>
+                <small class="error" id="passwordError"></small>
+            </div>
+            <div class="rate-group">
+              <i onclick="rating(1)" class="ph-star ph"></i>
+              <i onclick="rating(2)" class="ph-star ph"></i>
+              <i onclick="rating(3)" class="ph-star ph"></i>
+              <i onclick="rating(4)" class="ph-star ph"></i>
+              <i onclick="rating(5)" class="ph-star ph"></i>
+            </div>
+            <button type="submit">Register</button>
+            <div class="success" id="successMessage"></div>
         </form>
-      </div>
+    </div>
     </section>
     <script src="app.js"></script>
+  <script>
+      function rating(rate){
+          console.log(rate);
+          const stars = document.querySelectorAll('.ph-star');
+          stars.forEach((star, index) => {
+              if (index < rate) {
+                  star.classList.add('ph-fill');
+              } else {
+                  star.classList.remove('ph-fill');
+              }
+          });
+      }
+  </script>
   </body>
 </html>
