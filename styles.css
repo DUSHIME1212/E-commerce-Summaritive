@@ -58,7 +58,7 @@ input{
     padding: 1rem .5rem;
     border-radius: 12px;
 }
-input[::placeholder]{
+input[placeholder]{
     text-emphasis: none;
 }
 button{
