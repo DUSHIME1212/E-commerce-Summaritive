@@ -29,8 +29,6 @@ document.getElementById('registrationForm').addEventListener('submit', function(
     } else {
         emailError.style.visibility = 'hidden';
     }
-
-    // Password Validation
     const password = document.getElementById('password').value;
     const passwordError = document.getElementById('passwordError');
     if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
